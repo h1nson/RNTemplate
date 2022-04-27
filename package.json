@@ -17,7 +17,10 @@
     "@reduxjs/toolkit": "^1.8.1",
     "@types/react-native-snap-carousel": "^3.8.5",
     "@types/react-native-vector-icons": "^6.4.10",
+    "moment": "^2.29.3",
     "native-base": "^3.4.1",
+    "react": "17.0.2",
+    "react-native": "0.68.1",
     "react-native-gesture-handler": "^2.4.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-pager-view": "^5.4.15",
@@ -27,9 +30,7 @@
     "react-native-screens": "^3.13.1",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-svg": "^12.3.0",
-    "react-native-vector-icons": "^9.1.0",
-    "react": "17.0.2",
-    "react-native": "0.68.1"
+    "react-native-vector-icons": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

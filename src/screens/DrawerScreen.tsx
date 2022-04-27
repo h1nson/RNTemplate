@@ -44,11 +44,13 @@ export default (props: Props) => {
         //   headerRight: () => <Icon as={Ionicons} name="fa-solid" />,
         // }}
         drawerContent={props => <CustomDrawerContent {...props} />}>
-        <Drawer.Screen name="Home" component={HomeScreen} options={
-          {
+        <Drawer.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
             headerShown: false,
-          }
-        }/>
+          }}
+        />
         <Drawer.Screen name="About" component={About} />
         <Drawer.Screen name="Profile" component={Profile} />
       </Drawer.Navigator>

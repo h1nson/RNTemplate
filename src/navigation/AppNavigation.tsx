@@ -20,7 +20,9 @@ export default () => {
         <Stack.Screen
           name="Drawer"
           component={DrawerScreen}
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
