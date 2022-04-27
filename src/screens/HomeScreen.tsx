@@ -19,6 +19,7 @@ import HowDoYouFeel from '@/components/HowDoYouFeel';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {formatDate, formatTime} from '@/util/timeFormatter';
 import PrimaryButton from '@/components/Button/PrimaryButton';
+import Toast from 'react-native-root-toast';
 
 export default () => {
   //const theme = useTheme();
@@ -76,8 +77,7 @@ export default () => {
     );
   };
   return (
-    <Stack flex={1} p={4} space={2}>
-      <Header title="Home" />
+    <Stack flex={1} space={2}>
       <Center h={20} borderRadius={10} bg={MindAppTheme.boxGradient}>
         <Text color={'white'} fontSize={14} fontWeight={'bold'}>
           Hello World!
@@ -131,7 +131,17 @@ export default () => {
                 {formatTime(new Date())}
               </Text>
             </Text>
-            <PrimaryButton title="Video" onPress={() => {}} />
+            <PrimaryButton
+              title="Video"
+              onPress={() => {
+                Toast.show('Try to play a video.', {
+                  position: Toast.positions.TOP,
+                  textColor: 'white',
+                  shadow: true,
+                  backgroundColor: '#68984E',
+                });
+              }}
+            />
           </HStack>
         </Stack>
       </Stack>
