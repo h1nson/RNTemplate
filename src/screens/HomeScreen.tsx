@@ -20,6 +20,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {formatDate, formatTime} from '@/util/timeFormatter';
 import PrimaryButton from '@/components/Button/PrimaryButton';
 import Toast from 'react-native-root-toast';
+import HomeSkeleton from '@/components/Skeletons/HomeSkeleton';
 
 export default () => {
   //const theme = useTheme();
@@ -77,74 +78,80 @@ export default () => {
     );
   };
   return (
-    <Stack flex={1} space={2}>
-      <Center h={20} borderRadius={10} bg={MindAppTheme.boxGradient}>
-        <Text color={'white'} fontSize={14} fontWeight={'bold'}>
-          Hello World!
-        </Text>
-      </Center>
-      <HowDoYouFeel />
-
-      <Stack>
-        <HStack py={2}>
-          <Text flex={1} fontWeight="bold">
-            Next Webinars
-          </Text>
-          <Icon as={MaterialIcons} name="chevron-right" size={'2xl'} />
-        </HStack>
-        <Carousel
-          data={data}
-          layout="default"
-          inactiveSlideShift={0}
-          renderItem={renderItem}
-          activeSlideAlignment="start"
-          sliderWidth={width}
-          itemWidth={width - 100}
-        />
-      </Stack>
-
-      <Stack>
-        <HStack py={2}>
-          <Text flex={1} fontWeight="bold">
-            Upcoming Therapy Appointments
-          </Text>
-          <Icon as={MaterialIcons} name="chevron-right" size={'2xl'} />
-        </HStack>
-        <Stack p={4} space={1} borderRadius={10} bg="white">
-          <HStack space={2}>
-            <Avatar source={{uri: 'https://picsum.photos/200/300'}} />
-            <Stack>
-              <Text color="muted.500" fontWeight={'bold'}>
-                Therapist
-              </Text>
-              <Text fontWeight={'bold'}>Alex Kim</Text>
-            </Stack>
-          </HStack>
-          <HStack />
-          <HStack alignItems={'center'}>
-            <Text fontWeight={'bold'} flex={1}>
-              <Text color={MindAppTheme.colors.primaryText}>
-                {formatDate(new Date())}
-              </Text>
-              <Text color={'muted.400'}> | </Text>
-              <Text color={MindAppTheme.colors.primaryText}>
-                {formatTime(new Date())}
-              </Text>
+    <>
+      {false ? (
+        <HomeSkeleton />
+      ) : (
+        <Stack flex={1} space={2}>
+          <Center h={20} borderRadius={10} bg={MindAppTheme.boxGradient}>
+            <Text color={'white'} fontSize={14} fontWeight={'bold'}>
+              Hello World!
             </Text>
-            <PrimaryButton
-              title="Video"
-              onPress={() => {
-                Toast.show('Try to play a video.', {
-                  position: Toast.positions.TOP,
-                  textColor: 'white',
-                  shadow: true,
-                  backgroundColor: '#68984E',
-                });
-              }}
+          </Center>
+          <HowDoYouFeel />
+
+          <Stack>
+            <HStack py={2}>
+              <Text flex={1} fontWeight="bold">
+                Next Webinars
+              </Text>
+              <Icon as={MaterialIcons} name="chevron-right" size={'2xl'} />
+            </HStack>
+            <Carousel
+              data={data}
+              layout="default"
+              inactiveSlideShift={0}
+              renderItem={renderItem}
+              activeSlideAlignment="start"
+              sliderWidth={width}
+              itemWidth={width - 100}
             />
-          </HStack>
+          </Stack>
+
+          <Stack>
+            <HStack py={2}>
+              <Text flex={1} fontWeight="bold">
+                Upcoming Therapy Appointments
+              </Text>
+              <Icon as={MaterialIcons} name="chevron-right" size={'2xl'} />
+            </HStack>
+            <Stack p={4} space={1} borderRadius={10} bg="white">
+              <HStack space={2}>
+                <Avatar source={{uri: 'https://picsum.photos/200/300'}} />
+                <Stack>
+                  <Text color="muted.500" fontWeight={'bold'}>
+                    Therapist
+                  </Text>
+                  <Text fontWeight={'bold'}>Alex Kim</Text>
+                </Stack>
+              </HStack>
+              <HStack />
+              <HStack alignItems={'center'}>
+                <Text fontWeight={'bold'} flex={1}>
+                  <Text color={MindAppTheme.colors.primaryText}>
+                    {formatDate(new Date())}
+                  </Text>
+                  <Text color={'muted.400'}> | </Text>
+                  <Text color={MindAppTheme.colors.primaryText}>
+                    {formatTime(new Date())}
+                  </Text>
+                </Text>
+                <PrimaryButton
+                  title="Video"
+                  onPress={() => {
+                    Toast.show('Try to play a video.', {
+                      position: Toast.positions.TOP,
+                      textColor: 'white',
+                      shadow: true,
+                      backgroundColor: '#68984E',
+                    });
+                  }}
+                />
+              </HStack>
+            </Stack>
+          </Stack>
         </Stack>
-      </Stack>
-    </Stack>
+      )}
+    </>
   );
 };
