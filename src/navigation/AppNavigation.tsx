@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Landing from '@/screens/Landing';
 import {RootStackParamList} from './Types';
@@ -10,7 +10,14 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default () => {
   console.log('app nav');
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={{
+        ...DefaultTheme,
+        colors: {
+          ...DefaultTheme.colors,
+          background: 'white',
+        },
+      }}>
       <Stack.Navigator>
         <Stack.Screen
           name="Landing"

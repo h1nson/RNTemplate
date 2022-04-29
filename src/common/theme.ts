@@ -14,6 +14,7 @@ export const MindAppTheme = {
     },
   },
   colors: {
+    primary: '#68984E',
     primaryText: '#367AF0',
     primaryButton: '#68984E',
   },

@@ -4,6 +4,7 @@ import PagerView from 'react-native-pager-view';
 import {StyleSheet} from 'react-native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '@/navigation/Types';
+import PrimaryButton from '@/components/Button/PrimaryButton';
 type Props = NativeStackScreenProps<RootStackParamList, 'Profile'>;
 
 const styles = StyleSheet.create({
@@ -67,13 +68,13 @@ const Landing = ({navigation}: Props) => {
             })}
           </PagerView>
         </Box>
-        <Button
+        <PrimaryButton
           size={'lg'}
+          title="CONTINUE"
           onPress={() => {
             navigation.navigate('Drawer');
-          }}>
-          CONTINUE
-        </Button>
+          }}
+        />
       </Stack>
     </Box>
   );

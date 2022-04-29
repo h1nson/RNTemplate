@@ -1,15 +1,15 @@
 import React from 'react';
-import {Button} from 'native-base';
+import {Button, IButtonProps} from 'native-base';
 import {MindAppTheme} from '@/common/theme';
 import {GestureResponderEvent} from 'react-native';
 
-type ButtonProps = {
+type ButtonProps = IButtonProps & {
   title: string;
   onPress: (event: GestureResponderEvent) => void;
 };
 
 export default (props: ButtonProps) => {
-  const {title, onPress} = props;
+  const {title} = props;
   return (
     <Button
       bg={MindAppTheme.colors.primaryButton}
@@ -18,7 +18,7 @@ export default (props: ButtonProps) => {
         fontWeight: 'bold',
       }}
       px={5}
-      onPress={onPress}>
+      {...props}>
       {title}
     </Button>
   );
